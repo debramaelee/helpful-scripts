@@ -14,9 +14,11 @@ newStr = str0. replace("\n", ", ")
  
 # change all values to uppercase
 finalStr = newStr.upper()
+print '------------------------------------------------------------'
 print finalStr
  
 # removes last 2 characters (space and last comma)
+print '------------------------------------------------------------'
 print finalStr[:-2]
  
 # result
