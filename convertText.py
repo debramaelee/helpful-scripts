@@ -4,7 +4,7 @@ last_upd_snsh_id    INTEGER NULLABLE
 tot_ord_retl_amt    FLOAT   NULLABLE
 """
  
-# replace all unwanted strings and values
+# remove all unwanted strings and values
 nullVals = ["INTEGER", "STRING", "FLOAT", "NULLABLE", "TIMESTAMP", "Describe this field...", " ", "	"]
 for i in nullVals:
     str0 = str0.replace(i, "")
