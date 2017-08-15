@@ -1,31 +1,23 @@
 # enter original string here between triple quotes
-str0 = """last_upd_snsh_id  INTEGER NULLABLE  
-Describe this field...
-last_upd_ts STRING  NULLABLE  
-Describe this field...
-loc_tot_area  FLOAT NULLABLE  
-Describe this field...
+str0 = """cust_ord_id   STRING  NULLABLE
+last_upd_snsh_id    INTEGER NULLABLE
+tot_ord_retl_amt    FLOAT   NULLABLE
 """
-
-# replace all unwanted strings with a space
-nullVals = ["INTEGER", "STRING", "FLOAT", "NULLABLE"]
+ 
+# replace all unwanted strings and values
+nullVals = ["INTEGER", "STRING", "FLOAT", "NULLABLE", "TIMESTAMP", "Describe this field...", " ", "	"]
 for i in nullVals:
-	str0 = str0.replace(i, " ")
-
-# remove all "Describe this field..."
-newStr1 = str0.replace("Describe this field...", "")
-
+    str0 = str0.replace(i, "")
+ 
 # replace all paragraph breaks with commas
-newStr2 = newStr1. replace("\n", ",")
-
-# remove all spaces
-newStr3 = newStr2.replace(" ", "")
-
-# remove all double commas
-newStr4 = newStr3.replace(",,", ", ")
-
+newStr = str0. replace("\n", ", ")
+ 
 # change all values to uppercase
-finalStr = newStr4.upper()
-
+finalStr = newStr.upper()
 print finalStr
-
+ 
+# removes last 2 characters (space and last comma)
+print finalStr[:-2]
+ 
+# result
+# CUST_ORD_ID, LAST_UPD_SNSH_ID, TOT_ORD_RETL_AMT
