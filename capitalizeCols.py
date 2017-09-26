@@ -4,6 +4,9 @@ str0 = """
 
 str1 = str0.replace("},","},\n")
 
+# for just the line breaks
+# print str1
+
 str2 = str1.upper()
 
 str3 = str2.replace(""""NAME":""", """"name":""")
